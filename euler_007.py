@@ -1,15 +1,16 @@
 num = int(raw_input("find prime number: "))
-k = 3
-primes = [2]
-
+primes = [2, 3]
+k = 5
 while(len(primes) < (num)):
 	is_prime = True
 	for prime in primes:
-		if((k%prime == 0) and (prime <= (k ** .5))):
+		if(prime > (k ** .5)):
+			break
+		if(k%prime == 0):
 			is_prime = False
 			break
 	if(is_prime):
 		primes.append(k)
-	k += 1
+	k += 2
 #print primes
 print primes[num - 1]
